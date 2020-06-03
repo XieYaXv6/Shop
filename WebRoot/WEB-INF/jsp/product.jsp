@@ -84,10 +84,10 @@
 			</div>
 			<div class="info">
 				<dl>
-					<dt>亿家价:</dt>
+					<dt>现 价:</dt>
 					<dd>
 						<strong>￥： ${product.shopPrice} 元
-						</strong> 参 考 价：
+						</strong>原 价：
 						<del>
 							￥
 							${product.marketPrice}

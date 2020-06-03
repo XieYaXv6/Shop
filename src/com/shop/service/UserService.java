@@ -20,5 +20,7 @@ public interface UserService {
 	
 	public Adminuser adminUser_login(String username, String password) throws Exception;
 	
+	public Adminuser adminUser_loginadmin(String username, String password) throws Exception;
+	
 	public List<User> admin_findAll() throws Exception;
 }

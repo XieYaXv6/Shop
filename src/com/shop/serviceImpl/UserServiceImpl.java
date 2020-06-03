@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 		user.setCode(UUIDUtiils.getUUID());
 		int i = userMapper.insert(user);
 		System.out.println(i);
-		String emailMsg = "请激活<a href='http://localhost:8080/shop/activeUser.action?code="
+		String emailMsg = "请激活<a href='http://localhost:8888/shop/activeUser.action?code="
 				+ user.getCode() + "'>激活</a>激活码是： + user.getCode()";
 		try {
 			MailUtils.sendMail(user.getEmail(), emailMsg);
@@ -86,6 +86,20 @@ public class UserServiceImpl implements UserService {
 		createCriteria.andUsernameEqualTo(username);
 		createCriteria.andPasswordEqualTo(password);
 		List<Adminuser> list = adminuserMapper.selectByExample(example);
+		if(list.size()>0 && list!=null){
+			return list.get(0);
+		}
+		return null;
+	}
+	
+	@Override
+	public Adminuser adminUser_loginadmin(String username, String password)
+			throws Exception {
+		AdminuserExample example = new AdminuserExample();
+		Criteria createCriteria = example.createCriteria();
+		createCriteria.andUsernameEqualTo(username);
+		createCriteria.andPasswordEqualTo(password);
+		List<Adminuser> list = adminuserMapper.selectByExample1(example);
 		if(list.size()>0 && list!=null){
 			return list.get(0);
 		}

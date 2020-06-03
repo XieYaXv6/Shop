@@ -16,6 +16,7 @@
   <frame src="${pageContext.request.contextPath}/jsp/top.jsp" name="topFrame" scrolling="NO" noresize>
 	  <frameset cols="159,*">
 			<frame src="${pageContext.request.contextPath}/jsp/left.jsp" name="leftFrame" noresize scrolling="YES">
+			<frame src="${pageContext.request.contextPath}/jsp/leftadmin.jsp" name="leftFrame1" noresize scrolling="YES">
 			<frame src="${pageContext.request.contextPath}/jsp/right.jsp" name="mainFrame">
 	  </frameset>
 </frameset>

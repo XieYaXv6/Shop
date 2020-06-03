@@ -18,6 +18,8 @@ public interface AdminuserMapper {
     int insertSelective(Adminuser record);
 
     List<Adminuser> selectByExample(AdminuserExample example);
+    
+    List<Adminuser> selectByExample1(AdminuserExample example);
 
     Adminuser selectByPrimaryKey(Integer auid);
 

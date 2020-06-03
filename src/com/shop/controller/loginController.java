@@ -83,4 +83,17 @@ public class loginController {
 		return "admin/home";
 	}
 	
+	@RequestMapping("/admin/adminUser_loginadmin")
+	public String adminUser_loginadmin(HttpServletRequest request,Model model,@RequestParam String username,@RequestParam String password) throws Exception{
+		Adminuser adminuserLogin = userService.adminUser_loginadmin(username, password);
+		System.out.println(username);
+		System.out.println(password);
+		if(adminuserLogin == null){
+			model.addAttribute("message", "未找到该用户");
+			return "admin/index";
+		}
+		request.getSession().setAttribute("adminuserLogin", adminuserLogin);
+//		model.addAttribute("adminuserLogin", adminuserLogin);
+		return "admin/home";
+	}
 }
